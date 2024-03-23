@@ -1,4 +1,4 @@
-import React from 'react';
+import React , { lazy }from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { styled } from 'styled-components';
 
@@ -8,11 +8,16 @@ import { Text } from './foundation/components/Text';
 import { ActionLayout } from './foundation/layouts/ActionLayout';
 import { CommonLayout } from './foundation/layouts/CommonLayout';
 import { Color, Space, Typography } from './foundation/styles/variables';
-import { AuthorDetailPage } from './pages/AuthorDetailPage';
-import { BookDetailPage } from './pages/BookDetailPage';
-import { EpisodeDetailPage } from './pages/EpisodeDetailPage';
-import { SearchPage } from './pages/SearchPage';
-import { TopPage } from './pages/TopPage';
+//import { AuthorDetailPage } from './pages/AuthorDetailPage';
+const AuthorDetailPage = lazy(() => import('./pages/AuthorDetailPage'));
+//import { BookDetailPage } from './pages/BookDetailPage';
+const BookDetailPage = lazy(() => import('./pages/BookDetailPage'));
+//import { EpisodeDetailPage } from './pages/EpisodeDetailPage';
+const EpisodeDetailPage = lazy(() => import('./pages/EpisodeDetailPage'));
+//import { SearchPage } from './pages/SearchPage';
+const SearchPage = lazy(() => import('./pages/SearchPage'));
+//import { TopPage } from './pages/TopPage';
+const TopPage = lazy(() => import('./pages/TopPage'));
 
 const _BackToTopButton = styled(Link)`
   display: flex;
