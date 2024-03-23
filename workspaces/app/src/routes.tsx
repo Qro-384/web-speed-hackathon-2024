@@ -1,4 +1,4 @@
-import React , { lazy }from 'react';
+import React , { lazy, Suspense }from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { styled } from 'styled-components';
 
@@ -30,6 +30,7 @@ const _BackToTopButton = styled(Link)`
 
 export const Router: React.FC = () => {
   return (
+    <Suspense>
     <Routes>
       <Route element={<CommonLayout />} path={'/'}>
         <Route element={<TopPage />} path={''} />
@@ -55,5 +56,6 @@ export const Router: React.FC = () => {
         <Route element={<SearchPage />} path={'search'} />
       </Route>
     </Routes>
+    </Suspense>
   );
 };
